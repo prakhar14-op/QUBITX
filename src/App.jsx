@@ -5,6 +5,7 @@ import Dither from './components/Dither';
 import { Navbar } from './components/Navbar';
 import UserDashboard from './components/UserDashboard';
 import CreditReliabilityMesh from './components/CreditMesh';
+import AgenticSupplyChainFinance from './components/AgenticSupplyChainFinance';
 import { HeroSection, HeroSplineBackground, HeroContent } from './components/ui/galaxy-interactive-hero-section';
 
 // Animations
@@ -46,6 +47,18 @@ export default function App() {
           <UserDashboard onBack={() => setCurrentView('home')} />
         ) : currentView === 'mesh' ? (
           <CreditReliabilityMesh onBack={() => setCurrentView('home')} />
+        ) : currentView === 'agent-workflow' ? (
+          <div className="flex flex-col items-center justify-center min-h-screen pt-24 px-4 bg-black">
+            <div className="w-full max-w-7xl">
+              <button
+                onClick={() => setCurrentView('home')}
+                className="mb-8 flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-sm text-gray-400"
+              >
+                <ArrowRight className="w-4 h-4 rotate-180" /> Back to Home
+              </button>
+              <AgenticSupplyChainFinance />
+            </div>
+          </div>
         ) : (
           <>
             {/* Landing Page Content */}

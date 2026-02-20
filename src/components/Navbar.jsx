@@ -8,6 +8,7 @@ const menuItems = [
     { name: "Pricing", href: "#pricing" },
     { name: "Agent Demo", href: "#demo" },
     { name: "Credit Mesh", href: "#mesh" },
+    { name: "Agent Workflow", href: "#workflow" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
 ];
@@ -50,10 +51,12 @@ export function Navbar({ onNavigate }) {
                                             if (item.name === "Agent Demo") {
                                                 e.preventDefault();
                                                 if (onNavigate) onNavigate('demo');
-                                            }
-                                            if (item.name === "Credit Mesh") {
+                                            } else if (item.name === "Credit Mesh") {
                                                 e.preventDefault();
                                                 if (onNavigate) onNavigate('mesh');
+                                            } else if (item.name === "Agent Workflow") {
+                                                e.preventDefault();
+                                                if (onNavigate) onNavigate('agent-workflow');
                                             }
                                         }}
                                         target={item.target || "_self"}
@@ -106,6 +109,10 @@ export function Navbar({ onNavigate }) {
                                             } else if (item.name === "Credit Mesh") {
                                                 e.preventDefault();
                                                 if (onNavigate) onNavigate('mesh');
+                                                setMenuState(false);
+                                            } else if (item.name === "Agent Workflow") {
+                                                e.preventDefault();
+                                                if (onNavigate) onNavigate('agent-workflow');
                                                 setMenuState(false);
                                             } else {
                                                 setMenuState(false);
